@@ -14,7 +14,7 @@ int main() {
     int repetir;
     do {
         do {
-            printf("\tIngrese el número de estudiantes (1-5): ");
+            printf("\tIngrese el numero de estudiantes (1-5): ");
             fgets(entrada, sizeof(entrada), stdin);
             entrada[strcspn(entrada, "\n")] = '\0';
             int valido = 1;
@@ -25,7 +25,7 @@ int main() {
                 }
             }
             if (!valido) {
-                printf("\tError: Solo se permiten números.\n");
+                printf("\tError, solo se permiten numeros.\n");
                 continue;
             }
             numEstudiantes = 0;
@@ -33,7 +33,7 @@ int main() {
                 numEstudiantes = numEstudiantes * 10 + (entrada[i] - '0');
             }
             if (numEstudiantes < 1 || numEstudiantes > MAX_ESTUDIANTES) {
-                printf("\tError: El número debe estar entre 1 y 5.\n");
+                printf("\tError, el numero debe estar entre 1 y 5.\n");
             }
         } while (numEstudiantes < 1 || numEstudiantes > MAX_ESTUDIANTES);
 
@@ -44,7 +44,7 @@ int main() {
                 estudiantes[i][strcspn(estudiantes[i], "\n")] = '\0';
 
                 if (strlen(estudiantes[i]) == 0) {
-                    printf("\tError: El nombre no puede estar vacío.\n");
+                    printf("\tError, el nombre no puede estar vacio.\n");
                     continue;
                 }
 
@@ -58,7 +58,7 @@ int main() {
                     }
                 }
                 if (!valido) {
-                    printf("\tError: Solo se permiten letras y espacios.\n");
+                    printf("\tError, solo se permiten letras y espacios.\n");
                     continue;
                 }
 
@@ -70,7 +70,7 @@ int main() {
                     }
                 }
                 if (repetido) {
-                    printf("\tError: El nombre ya ha sido ingresado.\n");
+                    printf("\tError, el nombre ya ha sido ingresado.\n");
                     continue;
                 }
                 break;
@@ -84,7 +84,7 @@ int main() {
                 materias[i][strcspn(materias[i], "\n")] = '\0';
 
                 if (strlen(materias[i]) == 0) {
-                    printf("\tError: El nombre no puede estar vacío.\n");
+                    printf("\tError, el nombre no puede estar vacio.\n");
                     continue;
                 }
 
@@ -98,7 +98,7 @@ int main() {
                     }
                 }
                 if (!valido) {
-                    printf("\tError: Solo se permiten letras y espacios.\n");
+                    printf("\tError, solo se permiten letras y espacios.\n");
                     continue;
                 }
 
@@ -110,7 +110,7 @@ int main() {
                     }
                 }
                 if (repetido) {
-                    printf("\tError: El nombre ya ha sido ingresado.\n");
+                    printf("\tError, el nombre ya ha sido ingresado.\n");
                     continue;
                 }
                 break;
@@ -135,7 +135,7 @@ int main() {
                     }
 
                     if (!valido || strlen(entrada) == 0) {
-                        printf("\tError: Ingrese un número válido entre 0 y 10.\n");
+                        printf("\tError, ingrese un numero valido entre 0 y 10.\n");
                         continue;
                     }
 
@@ -155,7 +155,7 @@ int main() {
                     }
 
                     if (numNota < 0 || numNota > 10) {
-                        printf("\tError: La nota debe estar entre 0 y 10.\n");
+                        printf("\tError, la nota debe estar entre 0 y 10.\n");
                     } else {
                         notas[i][j] = numNota;
                         break;
@@ -165,7 +165,7 @@ int main() {
         }
 
         printf("\n\t===== Promedios por estudiante =====\n");
-        printf("\t%-25s\tPromedio\tNota más alta\tNota más baja\n", "Nombre");
+        printf("\t%-25s\tPromedio\tNota mas alta\tNota mas baja\n", "Nombre");
         for (int i = 0; i < numEstudiantes; i++) {
             float suma = 0;
             float maxNota = notas[i][0], minNota = notas[i][0];
@@ -178,7 +178,7 @@ int main() {
         }
 
         printf("\n\t===== Promedios por materia =====\n");
-        printf("\t%-25s\tPromedio\tNota más alta\tNota más baja\n", "Materia");
+        printf("\t%-25s\tPromedio\tNota mas alta\tNota mas baja\n", "Materia");
         for (int j = 0; j < MAX_MATERIAS; j++) {
             float suma = 0;
             float maxNota = notas[0][j], minNota = notas[0][j];
@@ -218,7 +218,7 @@ int main() {
             printf("\n");
         }
 
-        printf("\n\t¿Desea ingresar nuevos datos? (1 = Sí, 0 = No): ");
+        printf("\n\tDesea ingresar nuevos datos? (1 = Si, 0 = No): ");
         fgets(entrada, sizeof(entrada), stdin);
         entrada[strcspn(entrada, "\n")] = '\0';
         repetir = entrada[0] == '1' ? 1 : 0;
@@ -226,6 +226,7 @@ int main() {
     } while (repetir);
 
     printf ("\tQue tenga un lindo dia lleno de emocion\n");
+
 
     return 0;
 }
