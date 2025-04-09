@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main() {
+int main(int argc, char *argv[]) {
     int MAX_ESTUDIANTES = 5;
     int MAX_MATERIAS = 3;
     int MAX_NOMBRE = 50;
@@ -226,7 +226,6 @@ int main() {
     } while (repetir);
 
     printf ("\tQue tenga un lindo dia lleno de emocion\n");
-
 
     return 0;
 }
